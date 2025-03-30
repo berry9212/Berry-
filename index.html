@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransHookup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #55CDFC, #F7A8B8, #FFFFFF, #F7A8B8, #55CDFC);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: darkred;
+        }
+        .input-field {
+            margin-top: 10px;
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1>Welcome to TransHookup</h1>
+        <p>Warning: This site is for 18+ adults only.</p>
+        <button class="button" onclick="showHookupDetails()">Hookup Now</button>
+    </div>
+    
+    <script>
+        function showHookupDetails() {
+            document.getElementById('main-container').innerHTML = `
+                <h2>Get ready for an unforgettable experience!</h2>
+                <p>Indulge in your deepest desires with the most irresistible encounters. This is where pleasure meets passion.</p>
+                <p>All our connections are real and verified to ensure you have the most satisfying and safe experience.</p>
+                <p><strong>All bookings should be sent to Escorts before receiving the meeting address.</strong></p>
+                <p>Time and prices are negotiated directly with the escorts to suit your needs.</p>
+                <p>Relax, enjoy, and prepare for an amazing time!</p>
+                <button class="button" onclick="showLocationInput()">Start Hookup</button>
+            `;
+        }
+        
+        function showLocationInput() {
+            document.getElementById('main-container').innerHTML = `
+                <h2>Add Your Current Location</h2>
+                <input type="text" id="location" class="input-field" placeholder="Enter your location here...">
+                <button class="button" onclick="startSearch()">Search</button>
+            `;
+        }
+        
+        function startSearch() {
+            let location = document.getElementById('location').value;
+            if (location.trim() === "") {
+                alert("Please enter your location to proceed.");
+            } else {
+                alert("Scanning for nearby hookups in " + location + "...");
+                setTimeout(() => {
+                    alert("Match found! TEXT: +1(817)489-3976\nSay hi to your goddess and send your address");
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
